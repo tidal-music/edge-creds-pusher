@@ -1,0 +1,19 @@
+[package]
+name = "edge-creds-pusher"
+version = "0.0.1"
+edition = "2021"
+
+[dependencies]
+aws_lambda_events = "0.7.2"
+lambda_runtime = "0.7"
+tokio = { version = "1", features = ["macros"] }
+aws-config = "0.54.1"
+tracing = { version = "0.1.37", features = ["log", "log-always"] }
+tracing-subscriber = { version = "0.3.16", features = ["fmt"] }
+data-encoding = "2.3.3"
+aws-sdk-sts = "0.24.0"
+aws-types = "0.54.1"
+reqwest = { version = "0.11.14", features = ["json"] }
+aws-sdk-ssm = "0.24.0"
+openssl = { version = "0.10.45", features = ["vendored"] }
+fastly-api = "1.1.0"

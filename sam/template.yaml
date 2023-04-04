@@ -1,0 +1,26 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: >
+  edge-creds-pusher
+
+Globals:
+  Function:
+    Timeout: 30
+
+Resources:
+  main:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: ../function.zip
+      Handler: bootstrap
+      Runtime: provided.al2
+      Tracing: Active
+      Environment:
+        Variables:
+          FASTLY_API_TOKEN_SSM_NAME: "/path/to/api/token"
+          FASTLY_SERVICE_ID: "<replaceme>"
+          FASTLY_DICTIONARY_ID: "<replaceme>"
+          ASSUME_ROLE_ARN: "arn:aws:iam::<account_id>:role/<role_name>"
+          LOG_LEVEL: "INFO"
+
+Outputs:
