@@ -21,6 +21,6 @@ RUN touch /usr/src/myapp/src/main.rs
 RUN cargo build --release --target x86_64-unknown-linux-musl
 
 
-RUN cp ${WORKDIR}/target/x86_64-unknown-linux-musl/release/edge-creds-pusher ootstrap
+RUN cp ${WORKDIR}/target/x86_64-unknown-linux-musl/release/edge-creds-pusher bootstrap
 RUN zip function.zip bootstrap
 
